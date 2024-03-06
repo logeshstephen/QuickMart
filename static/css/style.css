@@ -1,0 +1,50 @@
+html{
+    font-size: 14px;
+}
+body{
+    font-family: sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.carousel-item img{
+    object-fit: cover;
+    object-position: top;
+    height: 60vh;
+    overflow: hidden;
+}
+.old_price{
+    font-weight: bold;
+    color: red;
+}
+.new_price{
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    padding: 2px;
+    border-radius: 5px;
+
+} 
+.pic-box{
+    position: relative;
+}
+.hot{
+    background-color: orangered;
+    color:white;
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+    display: inline;
+    border-radius: 5px;
+    padding: 5px;
+    position:absolute;
+    top: 0;
+    right:20px;
+    z-index: 10;
+}
+.login{
+    padding-top: 70px;
+    padding-bottom: 70px;
+    margin-top: 70px;
+    margin-bottom :80px;
+}

@@ -1,0 +1,36 @@
+{% extends 'shop/layouts/main.html' %}
+{% load static %}
+{% block title %}
+ Login |Quick Mart
+{% endblock title %}
+{% block content %}
+    <div class="container login" style="background-image: url(../../../static/images/login.jpg);background-repeat: no-repeat;background-size:cover;">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mb-3"  style="color: white;padding-left: 10px;">User Login</h1>
+                <hr style="border-color: #b8bfc2;">
+                {% include 'shop/inc/message.html' %}
+            </div>
+        </div>
+        <section class="py-5 my5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="md-4" style="padding-bottom: 10px;">
+                                <label for="username" class="form-label" style="color: white;">User Name</label>
+                                <input type="text" id="username" name="username" class="form-control" placeholder="Enter Your Name">
+                            </div>
+                            <div class="mb-4">
+                                <label for="Password" class="form-label" style="color: white;">Password</label>
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock content %}

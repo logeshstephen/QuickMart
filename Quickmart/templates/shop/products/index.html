@@ -1,0 +1,49 @@
+{% extends 'shop/layouts/main.html' %}
+{% block title %}
+Quick Mart
+{% endblock title %}
+
+{% block content %}
+<section class="bg-light py-4 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3">{{category}} Products</h4>
+                <hr style="border-color: #b8bfc2;">
+                <nav aria-label="breadcrumb-item">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'collections' %}">Collections</a></li>
+                        <li class="breadcrumb-item"> {{category}} Collections </li>
+                    </ol>
+                </nav>
+                {% include 'shop/inc/message.html' %}
+            </div>
+            {% for item in products %}
+            <div class="col-lg-3 col-md-4  ">
+                <div class="card my-5">
+                    {% if item.product_image %}
+                        <img src="{{ item.product_image.url }}" class="card-image-top" alt="catagory image" style="height: 300px;width: 300px;overflow: hidden;">
+                    {% else %}
+                        <p>no image here</p>
+                    {% endif %}
+                    <a href="{% url 'product_details' category item.name %}">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">{{ item.name }}</h5>
+                            <p class="card-text">
+                                <span class="float-start old_price" ><s>Rs.{{ item.original_price |stringformat:'d' }}</s></span>
+                                <span class="float-end new_price">Rs.{{ item.selling_price |stringformat:'d'}}</span>
+                            </p>
+                            <a href="{% url 'product_details' category item.name %}" class="btn btn-primary me-5 mt-2">View Description</a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</section>
+
+{% endblock content %}
+<h1>fir</h1>
